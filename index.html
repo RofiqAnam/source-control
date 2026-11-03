@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pelajar NU Magetan | Official Links</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-green: #064E3B;
+            --green: #059669;
+            --light-green: #D1FAE5;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+            color: var(--dark-green);
+            background: linear-gradient(
+                135deg,
+                #064E3B 0%,
+                #059669 38%,
+                #A7F3D0 72%,
+                #F0FDF4 100%
+            );
+            display: flex;
+            justify-content: center;
+            padding: 55px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background Decoration */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            background: rgba(255,255,255,.25);
+            filter: blur(100px);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            background: rgba(16,185,129,.35);
+            filter: blur(100px);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Profile */
+        .profile {
+            margin-bottom: 28px;
+            animation: fadeUp .8s ease;
+        }
+
+        .logo-wrapper {
+            width: 125px;
+            height: 125px;
+            margin: 0 auto 20px;
+            padding: 5px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.5);
+            box-shadow:
+                0 0 0 8px rgba(255,255,255,.12),
+                0 15px 40px rgba(0,0,0,.15);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .profile h1 {
+            font-size: 27px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -.5px;
+            margin-bottom: 7px;
+            text-shadow: 0 2px 10px rgba(0,0,0,.15);
+        }
+
+        .verified {
+            display: inline-flex;
+            color: #D1FAE5;
+            font-size: 17px;
+            margin-left: 4px;
+        }
+
+        .profile p {
+            color: rgba(255,255,255,.9);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .tagline {
+            display: inline-block;
+            margin-top: 13px;
+            padding: 7px 17px;
+            border: 1px solid rgba(255,255,255,.4);
+            background: rgba(255,255,255,.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Social Media */
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .socials a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,.4);
+            background: rgba(255,255,255,.15);
+            backdrop-filter: blur(10px);
+            border-radius: 14px;
+            transition: .3s ease;
+        }
+
+        .socials a:hover {
+            background: white;
+            color: var(--green);
+            transform: translateY(-5px);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: left;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+            padding-left: 5px;
+        }
+
+        /* Links */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            position: relative;
+            min-height: 65px;
+            padding: 12px 18px;
+            color: var(--dark-green);
+            background: rgba(255,255,255,.82);
+            border: 1px solid rgba(255,255,255,.8);
+            border-radius: 18px;
+            text-decoration: none;
+            box-shadow: 0 7px 20px rgba(0,0,0,.08);
+            backdrop-filter: blur(15px);
+            transition: .35s ease;
+            animation: fadeUp .7s ease both;
+        }
+
+        .link-item:nth-child(1) { animation-delay: .1s; }
+        .link-item:nth-child(2) { animation-delay: .2s; }
+        .link-item:nth-child(3) { animation-delay: .3s; }
+        .link-item:nth-child(4) { animation-delay: .4s; }
+        .link-item:nth-child(5) { animation-delay: .5s; }
+
+        .link-item:hover {
+            transform: translateY(-5px) scale(1.015);
+            background: white;
+            box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        }
+
+        .link-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #D1FAE5;
+            border-radius: 13px;
+            color: #047857;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .link-text {
+            flex: 1;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .link-text h3 {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .link-text p {
+            font-size: 11px;
+            color: #6B7280;
+            margin-top: 3px;
+        }
+
+        .link-arrow {
+            color: #059669;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            color: rgba(255,255,255,.85);
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        .footer-heart {
+            color: #FCA5A5;
+        }
+
+        /* Animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            body {
+                padding: 40px 20px;
+            }
+
+            .profile h1 {
+                font-size: 23px;
+            }
+
+            .logo-wrapper {
+                width: 110px;
+                height: 110px;
+            }
+
+            .link-item {
+                min-height: 62px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Profile -->
+        <section class="profile">
+
+            <div class="logo-wrapper">
+                <img
+                    src="https://placehold.co/300x300/064E3B/ffffff?text=IPNU+IPPNU"
+                    alt="Logo Pelajar NU Magetan"
+                    class="profile-img"
+                >
+            </div>
+
+            <h1>
+                Pelajar NU Magetan
+                <span class="verified">
+                    <i class="fa-solid fa-circle-check"></i>
+                </span>
+            </h1>
+
+            <p>
+                Selamat datang di pusat informasi<br>
+                Pelajar NU Kabupaten Magetan.
+            </p>
+
+            <div class="tagline">
+                BELAJAR • BERJUANG • BERTAQWA
+            </div>
+
+        </section>
+
+        <!-- Social Media -->
+        <section class="socials">
+
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://tiktok.com/" target="_blank" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="https://youtube.com/" target="_blank" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+        </section>
+
+        <!-- Link List -->
+        <h2 class="section-title">EXPLORE OUR LINKS</h2>
+
+        <section class="links">
+
+            <a href="https://instagram.com/" class="link-item" target="_blank">
+                <div class="link-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Instagram</h3>
+                    <p>Ikuti aktivitas terbaru kami</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+            <a href="https://tiktok.com/" class="link-item" target="_blank">
+                <div class="link-icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+                <div class="link-text">
+                    <h3>TikTok</h3>
+                    <p>Konten kreatif Pelajar NU Magetan</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+            <a href="https://youtube.com/" class="link-item" target="_blank">
+                <div class="link-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="link-text">
+                    <h3>YouTube</h3>
+                    <p>Dokumentasi dan video kegiatan</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+            <a href="https://facebook.com/" class="link-item" target="_blank">
+                <div class="link-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Facebook</h3>
+                    <p>Informasi dan publikasi kegiatan</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+            <a href="https://wa.me/6281234567890" class="link-item" target="_blank">
+                <div class="link-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="link-text">
+                    <h3>WhatsApp</h3>
+                    <p>Hubungi kami secara langsung</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+            </a>
+
+            <a href="https://pelajarnumagetan.or.id"
+   class="link-item"
+   target="_blank"
+   rel="noopener noreferrer">
+
+    <div class="link-icon">
+        <i class="fa-solid fa-globe"></i>
+    </div>
+
+    <div class="link-text">
+        <h3>Website Resmi</h3>
+        <p>Kunjungi website Pelajar NU Magetan</p>
+    </div>
+
+    <i class="fa-solid fa-arrow-up-right-from-square link-arrow"></i>
+    </a>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            Made with <span class="footer-heart">♥</span> by
+            <strong>Pelajar NU Magetan</strong>
+
+            <p>© 2026 All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
